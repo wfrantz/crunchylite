@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Crunchylite",
+  "version": "1.0.0",
+  "description": "Crunchyroll without the cruft",
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "http://www.crunchyroll.com/"
+  ],
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://www.crunchyroll.com/popout?*" ],
+      "js": [ "playerPage.js" ]
+    },
+    {
+      "matches": [ "http://www.crunchyroll.com/*" ],
+      "css": [ "crunchylite.css" ],
+      "js": [ "seriesPage.js" ],
+      "run_at": "document_end"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  }
+}

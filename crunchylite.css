@@ -1,0 +1,15 @@
+#source_showview #main_content {
+	width: 100%;
+}
+
+#source_showview #sidebar.right, .share-buttons, .other-series {
+	display: none;
+}
+
+#source_showview .season-dropdown {
+	background: #e5e5e5 !important;
+}
+
+#source_showview .portrait-grid li {
+	margin-left: 10px;
+}
