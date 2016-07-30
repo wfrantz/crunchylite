@@ -10,14 +10,14 @@
     "http://www.crunchyroll.com/"
   ],
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
   "browser_action": {
     "default_icon": {
-      "19": "icon19.png",
-      "38": "icon38.png"
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
     }
   },
   "background": {
@@ -30,7 +30,6 @@
     },
     {
       "matches": [ "http://www.crunchyroll.com/*" ],
-      "css": [ "crunchylite.css" ],
       "js": [ "seriesPage.js" ],
       "run_at": "document_end"
     }

@@ -2,7 +2,7 @@
 	width: 100%;
 }
 
-#source_showview #sidebar.right, .share-buttons, .other-series {
+#welcome_right, #source_showview #sidebar.right, .share-buttons, .other-series {
 	display: none;
 }
 
