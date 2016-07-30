@@ -1,11 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-	chrome.storage.local.get({
-		showNextEpisodeDialog: false
-	}, function (options) {
-		document.getElementById('showNextEpisodeDialog').checked = options.showNextEpisodeDialog;
-	});
+	getLocalOption('showNextEpisodeDialog', value => document.getElementById('showNextEpisodeDialog').checked = value);
 
 	document.getElementById('showNextEpisodeDialog').addEventListener('click', function (e) {
-		chrome.storage.local.set({ showNextEpisodeDialog: e.target.checked });
+		setLocalOptions({ showNextEpisodeDialog: e.target.checked });
 	});
 });
+
+// TODO eliminate duplication
+function getLocalOption(optionName, callback) {
+    getLocalOptions(options => callback(options[optionName]));
+}
+
+function getLocalOptions(callback) {;
+    chrome.storage.local.get({ disabled: false, showNextEpisodeDialog: false }, callback);
+}
+
+var setLocalOptions = chrome.storage.local.set;
