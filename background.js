@@ -48,7 +48,7 @@ function toggleOnHandler () {
 }
 
 function redirectEpisodePageRequests(details) {
-    var mediaIdMatch = details.url.match(/^http:\/\/www\.crunchyroll\.com\/[a-z0-9-]+\/[a-z0-9-]*-(\d+)(\?t=\d+)?$/);
+    var mediaIdMatch = details.url.match(/^http:\/\/www\.crunchyroll\.com\/[a-z0-9-]+\/[a-z0-9-]*-(\d{6,})(\?t=\d+)?$/);
 
     if (mediaIdMatch) {
         var timeCode = 0;
