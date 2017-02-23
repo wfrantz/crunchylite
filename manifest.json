@@ -1,40 +1,40 @@
 {
-  "manifest_version": 2,
-  "name": "Crunchylite",
-  "version": "1.0.0",
-  "description": "Crunchyroll without the cruft",
-  "permissions": [
-    "storage",
-    "webRequest",
-    "webRequestBlocking",
-    "http://www.crunchyroll.com/"
-  ],
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "browser_action": {
-    "default_icon": {
-      "19": "icons/icon19.png",
-      "38": "icons/icon38.png"
-    }
-  },
-  "background": {
-    "scripts": [ "background.js" ]
-  },
-  "content_scripts": [
-    {
-      "matches": [ "http://www.crunchyroll.com/popout?*" ],
-      "js": [ "playerPage.js" ]
-    },
-    {
-      "matches": [ "http://www.crunchyroll.com/*" ],
-      "js": [ "seriesPage.js" ],
-      "run_at": "document_end"
-    }
-  ],
-  "options_ui": {
-    "page": "options.html"
-  }
+	"manifest_version": 2,
+	"name": "Crunchylite",
+	"version": "1.0.0",
+	"description": "Crunchyroll without the cruft",
+	"permissions": [
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"http://www.crunchyroll.com/"
+	],
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "icons/icon19.png",
+			"38": "icons/icon38.png"
+		}
+	},
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+	"content_scripts": [
+		{
+			"matches": [ "http://www.crunchyroll.com/popout?*" ],
+			"js": [ "playerPage.js" ]
+		},
+		{
+			"matches": [ "http://www.crunchyroll.com/*" ],
+			"js": [ "seriesPage.js" ],
+			"run_at": "document_end"
+		}
+	],
+	"options_ui": {
+		"page": "options.html"
+	}
 }
