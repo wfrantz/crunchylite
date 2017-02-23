@@ -11,13 +11,15 @@ var mediaIdMatch = location.search.match(/media_id=(\d+)/);
 if (mediaIdMatch) {
 	var metadataRequest = new XMLHttpRequest();
 	metadataRequest.open('GET',
-		'http://www.crunchyroll.com/xml/?req=RpcApiVideoPlayer_GetMediaMetadata&media_id=' + mediaIdMatch[1]);
+		'http://www.crunchyroll.com/xml/?req=RpcApiVideoPlayer_GetMediaMetadata&media_id=' +
+			mediaIdMatch[1]);
 	metadataRequest.addEventListener('load', function () {
 		var episodeNumberElement = this.responseXML.getElementsByTagName('episode_number')[0];
 		var seriesTitleElement = this.responseXML.getElementsByTagName('series_title')[0];
 		if (seriesTitleElement && seriesTitleElement.textContent) {
 			if (episodeNumberElement && episodeNumberElement.textContent) {
-				document.title = 'Episode ' + episodeNumberElement.textContent + ' | ' + seriesTitleElement.textContent;
+				document.title = 'Episode ' + episodeNumberElement.textContent +
+					' | ' + seriesTitleElement.textContent;
 			} else {
 				document.title = seriesTitleElement.textContent;
 			}

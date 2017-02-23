@@ -1,7 +1,8 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-	getLocalOption('showNextEpisodeDialog', value => document.getElementById('showNextEpisodeDialog').checked = value);
+	getLocalOption('showNextEpisodeDialog',
+		value => document.getElementById('showNextEpisodeDialog').checked = value);
 
 	document.getElementById('showNextEpisodeDialog').addEventListener('click', function (e) {
 		setLocalOptions({ showNextEpisodeDialog: e.target.checked });
